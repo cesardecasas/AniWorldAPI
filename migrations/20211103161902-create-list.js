@@ -9,10 +9,10 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       anime_id: {
-        type: Sequelize.ARRAY
+        type: Sequelize.ARRAY(Sequelize.STRING)
       },
       manga_id: {
-        type: Sequelize.ARRAY
+        type: Sequelize.ARRAY(Sequelize.STRING)
       },
       user_id: {
         type: Sequelize.INTEGER

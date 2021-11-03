@@ -18,7 +18,8 @@ module.exports = {
         type: Sequelize.STRING
       },
       profilePic: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        default:'https://moonvillageassociation.org/wp-content/uploads/2018/06/default-profile-picture1.jpg'
       },
       createdAt: {
         allowNull: false,
