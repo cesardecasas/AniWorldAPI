@@ -1,4 +1,4 @@
-// const AppRouter = require('./routes/AppRouter')
+const AppRouter = require('./routes/AppRouter')
 const express = require('express')
 const logger = require('morgan')
 const cors = require('cors')
@@ -21,6 +21,8 @@ app.use(express.static(path.join(__dirname, 'client', 'build')))
 
 
 app.get('/', (req, res) => res.json({ message: 'Server Works x2' }))
+
+app.use('/api', AppRouter)
 
 app.get('*', (req,res)=>res.sendFile(path.join(__dirname, 'client', 'build','index.html')))
 

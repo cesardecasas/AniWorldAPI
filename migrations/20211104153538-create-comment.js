@@ -15,7 +15,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       type: {
-        type: Sequelize.ENUM(['manga', 'anime', 'comment'])
+        type: Sequelize.ENUM('manga', 'anime', 'comment')
       },
       content: {
         type: Sequelize.STRING

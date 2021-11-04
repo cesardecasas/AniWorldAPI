@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
   Comment.init({
     user_id: DataTypes.INTEGER,
     owner_id: DataTypes.STRING,
-    type: DataTypes.ENUM,
+    type: DataTypes.ENUM('manga', 'anime', 'comment'),
     content: DataTypes.STRING
   }, {
     sequelize,
