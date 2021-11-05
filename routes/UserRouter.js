@@ -3,10 +3,11 @@ const controller = require('../controllers/AuthController')
 const { readToken, verifyJwt } = require('../middleware/Auth')
 
 // auth
+Router.get('/get', controller.getUsers)
 Router.post('/login', controller.Login)
 Router.post('/register', controller.Register)
 Router.get('/session', readToken, verifyJwt, controller.SessionStatus)
-Router.get('/all', controller.getUsers)
+
 // auth
 
 

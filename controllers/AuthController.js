@@ -49,6 +49,7 @@ const SessionStatus = async (req, res) => {
 
 const getUsers = async(req,res)=>{
   try {
+    console.log('a')
     const users = await User.findAll()
     res.send(users)
   } catch (error) {
