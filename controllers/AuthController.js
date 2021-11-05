@@ -47,8 +47,18 @@ const SessionStatus = async (req, res) => {
   }
 }
 
+const getUsers = async(req,res)=>{
+  try {
+    const users = await User.findAll()
+    res.send(users)
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 module.exports = {
   Register,
   Login,
-  SessionStatus
+  SessionStatus, 
+  getUsers
 }

@@ -6,6 +6,7 @@ const { readToken, verifyJwt } = require('../middleware/Auth')
 Router.post('/login', controller.Login)
 Router.post('/register', controller.Register)
 Router.get('/session', readToken, verifyJwt, controller.SessionStatus)
+Router.get('/all', controller.getUsers)
 // auth
 
 
