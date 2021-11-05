@@ -17,14 +17,13 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.disable('X-Powered-By')
 app.use(express.static(path.join(__dirname, 'client', 'build')))
-
+app.get('*', (req,res)=>res.sendFile(path.join(__dirname, 'client', 'build','index.html')))
 
 
 app.get('/', (req, res) => res.json({ message: 'Server Works x2' }))
 
 app.use('/api', AppRouter)
 
-app.get('*', (req,res)=>res.sendFile(path.join(__dirname, 'client', 'build','index.html')))
 
 
 app.listen(PORT, async () => {
