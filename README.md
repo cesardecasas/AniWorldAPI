@@ -1,5 +1,10 @@
 # AniWorldAPI
 
+Base Url 
+```
+https://aniworld-api.herokuapp.com
+```
+
 
 User Object Example
 ``` 
