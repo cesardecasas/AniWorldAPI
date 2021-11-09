@@ -1,5 +1,5 @@
 const { hashPassword, passwordValid, createToken } = require('../middleware/Auth')
-const { User } = require('../models')
+const { User, List } = require('../models')
 
 const Register = async (req, res) => {
   try {
@@ -7,6 +7,11 @@ const Register = async (req, res) => {
     const { userName, email, password } = req.body
     const password_digest = await hashPassword(password) // Creating a hashed password
     const user = await User.create({ userName, email, password_digest }) // Store the hashed password in the database
+    const list = await List.create({
+      user_id:user.id,
+      manga_id:[],
+      anime_id:[]
+  }) 
     res.send(user)
   } catch (error) { 
     throw error
@@ -57,9 +62,19 @@ const getUsers = async(req,res)=>{
   }
 }
 
+const deleteUser = async(req,res)=>{
+  try {
+    const user = await User.destroy({where:{id:req.params.id}})
+    res.send('user successfully deleted')
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 module.exports = {
   Register,
   Login,
   SessionStatus, 
-  getUsers
+  getUsers, 
+  deleteUser
 }

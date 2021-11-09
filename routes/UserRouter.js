@@ -7,7 +7,7 @@ Router.get('/get', controller.getUsers)
 Router.post('/login', controller.Login)
 Router.post('/register', controller.Register)
 Router.get('/session', readToken, verifyJwt, controller.SessionStatus)
-
+Router.delete('/delete/:id', controller.deleteUser)
 // auth
 
 
