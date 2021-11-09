@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken')
 require('dotenv').config()
 
 const SALT_ROUNDS = 12
-const APP_SECRET = 'hello'
+const APP_SECRET = process.env.APP_SECRET
 
 const hashPassword = async (password) => {
   /**
