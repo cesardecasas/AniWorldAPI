@@ -49,3 +49,26 @@ Request | Use | Route | Parameters | Return
 POST|Create list | api/list/create/:id | user_id:Int | List Object 
 GET|Get list  | api/list/get/:id | user_id:int | List Object 
 PUT|Add item to manga/anime array | api/list/update/:id|user_id:Int, type:String(manga or anime), newItem:String | updated List object 
+
+
+Comment Object Example
+
+```
+"id": 2,
+    "user_id": 2,
+    "owner_id": "343345",
+    "type": "anime",
+    "content": "I love the anime",
+    "createdAt": "2021-11-10T17:39:11.474Z",
+    "updatedAt": "2021-11-10T17:39:11.474Z"
+```
+
+### Comment
+
+Request | Use | Route | Parameters | Return
+-----|-----|-----|-----|-----|
+GET | Get comments from anime/manga/comments | /api/comment/getall/:id | id:int | Array of Comment objects 
+GET | Get comments from an specific user | /api/commment/getuser/:id | id:user_id | Array of Comment
+PUT | Edit content from Comment | /api/comment/edit/:id | id:comment_id, content:String | Return edited comment
+POST | Create comment | /api/comment/create | user_id:Int, owner_id:Int, type:String(manga, anime or comment), content:String | Comment Object 
+DELETE | Delete comment | /api/comment/delete/:id | id:comment_id | msg:successfully deleted
