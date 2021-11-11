@@ -50,10 +50,38 @@ const addItem = async(req,res)=>{
     }
 }
 
+const removeItem = async(req,res)=>{
+    try {
+        const newList = req.body.arr
+
+        let list 
+        if(req.body.type === 'anime'){
+            list = await List.update(
+                {'anime_id': newList},
+            {
+                where:{user_id:req.params.id},
+                returning:true
+            })
+        }else if(req.body.type === 'manga'){
+            list = await List.update(
+                {'manga_id': newList},
+            {
+                where:{user_id:req.params.id},
+                returning:true
+            })
+        }
+
+        res.send(list)
+        
+    } catch (error) {
+        console.log(error)
+    }
+}
 
 
 module.exports = {
     getUserList,
     createUserList,
-    addItem
+    addItem, 
+    removeItem
 }
