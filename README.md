@@ -49,6 +49,7 @@ Request | Use | Route | Parameters | Return
 POST|Create list | api/list/create/:id | user_id:Int | List Object 
 GET|Get list  | api/list/get/:id | user_id:int | List Object 
 PUT|Add item to manga/anime array | api/list/update/:id|user_id:Int, type:String(manga or anime), newItem:String | updated List object 
+PUT| Remove item from array | api/list/remove/:id | type:String(manga or anime), arr:Array(new array), id:user_id | List Object 
 
 
 Comment Object Example
