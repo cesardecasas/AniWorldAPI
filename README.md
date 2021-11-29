@@ -1,5 +1,10 @@
 # AniWorldAPI
 
+
+### ERD Models
+
+![ERD](./img/ERD.jpeg)
+
 Base Url 
 ```
 https://aniworld-api.herokuapp.com
