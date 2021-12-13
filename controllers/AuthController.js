@@ -49,8 +49,7 @@ const SessionStatus = async (req, res) => {
     })
     res.send({ user, status: 'OK' })
   } catch (error) {
-    throw error
-  }
+  console.log(error)  }
 }
 
 const getUsers = async(req,res)=>{
