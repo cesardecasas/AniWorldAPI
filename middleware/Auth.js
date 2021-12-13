@@ -29,6 +29,7 @@ const passwordValid = async (submittedPassword, storedPassword) => {
 }
 
 const readToken = (req, res, next) => {
+  console.log(req.headers)
   let token = req.headers.authorization.split(' ')[1]
   //   Read the request headers for an authorization field, the token format is as follows: Bearer sometokenishere
   //   We split the header at the space and get the token at index 1
