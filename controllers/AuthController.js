@@ -45,7 +45,7 @@ const SessionStatus = async (req, res) => {
     const { token } = res.locals
     console.log(token)
     const user = await User.findByPk(token.id, {
-      attributes: ['id', 'name', 'email'] // Find a user by the id encoded in the json web token, only include the id, name and email fields
+      attributes: ['id', 'userName'] // Find a user by the id encoded in the json web token, only include the id, name and email fields
     })
     res.send({ user, status: 'OK' })
   } catch (error) {
