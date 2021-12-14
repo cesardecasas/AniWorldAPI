@@ -31,6 +31,7 @@ POST |create account | api/user/register | email:String userName:String password
 POST |Log in | api/user/login | email:String password:String | user object and token 
 GET |check session | api/user/session | token(returned when logged in) | true/false currentUser information
 DELETE | delete User | api/user/delete/:id | user_id:Int | msg:'successfully deleted'
+GET | get user info | api/user/getuser/:id | id:user_id | User Object
 
 List Object Example
 ``` 
