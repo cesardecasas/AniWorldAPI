@@ -71,10 +71,20 @@ const deleteUser = async(req,res)=>{
   }
 }
 
+const getUser = async(req,res)=>{
+  try {
+    const user = await User.findOne({where:{id:req.params.id}})
+    res.send(user)
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 module.exports = {
   Register,
   Login,
   SessionStatus, 
   getUsers, 
-  deleteUser
+  deleteUser, 
+  getUser
 }
